@@ -156,4 +156,13 @@
     UINavigationBar *navigationBar = [[UINavigationBar alloc] init];
     return navigationBar.bounds.size.height;
 }
+- (UIImage *)defautShadowImage {
+    UIImage *image;
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.bounds.size.width, 1) , NO, [UIScreen mainScreen].scale);
+//    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 @end
