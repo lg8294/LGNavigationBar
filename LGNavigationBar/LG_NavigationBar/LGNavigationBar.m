@@ -17,8 +17,8 @@
 
 @property (nonatomic) UIView *contentView;
 @property (nonatomic) UILabel *titleLable;
-@property (nonatomic) UIButton *rightButton;
-@property (nonatomic) UIButton *leftButton;
+@property (nonatomic) UIButton *rightBtn;
+@property (nonatomic) UIButton *leftBtn;
 
 @property (nonatomic) UIColor *barTinColor;
 
@@ -62,6 +62,18 @@
     
     [self.titleLable sizeToFit];
     [self.titleLable setCenter:CGPointMake(width/2, 22)];
+    
+    [self.rightBtn sizeToFit];
+    CGFloat rightBtnWidth = self.rightBtn.bounds.size.width;
+    rightBtnWidth = rightBtnWidth < 44 ? 44 : rightBtnWidth;
+    [self.rightBtn setBounds:CGRectMake(0, 0, rightBtnWidth, 44)];
+    [self.rightBtn setCenter:CGPointMake(width-rightBtnWidth/2, 22)];
+    
+    [self.leftBtn sizeToFit];
+    CGFloat leftBtnWidth = self.leftBtn.bounds.size.width;
+    leftBtnWidth = leftBtnWidth < 44 ? 44 : leftBtnWidth;
+    [self.leftBtn setBounds:CGRectMake(0, 0, leftBtnWidth, 44)];
+    [self.leftBtn setCenter:CGPointMake(leftBtnWidth/2, 22)];
 }
 
 #pragma mark - setup
@@ -73,6 +85,7 @@
     
     self.shadowView = [[UIImageView alloc] init];
     [self.shadowView setClipsToBounds:YES];
+    [self.shadowView setImage:[self defautShadowImage]];
     [self addSubview:self.shadowView];
     
     self.contentView = [[UIView alloc] init];
@@ -82,12 +95,24 @@
     [self setTitleFont:[UIFont systemFontOfSize:21 weight:UIFontWeightMedium]];
     [self setTitleColor:[UIColor blackColor]];
     
+    [self.contentView addSubview:self.rightBtn];
+    [self.contentView addSubview:self.leftBtn];
+    
     self.barTinColor = [UIColor whiteColor];
+}
+- (void)setTintColor:(UIColor *)tintColor {
+    [super setTintColor:tintColor];
+    [self.leftBtn setTintColor:tintColor];
+    [self.rightBtn setTintColor:tintColor];
 }
 #pragma mark - get/set
 - (void)setBarPosition:(UIBarPosition)barPosition {
     _barPosition = barPosition;
     [self setNeedsLayout];
+}
+- (void)setBarTinColor:(UIColor *)barTinColor {
+    _barTinColor = barTinColor;
+    [self.backgroundView setBackgroundColor:barTinColor];
 }
 - (UILabel *)titleLable {
     if (!_titleLable) {
@@ -109,14 +134,23 @@
     _titleColor = titleColor;
     [self.titleLable setTextColor:_titleColor];
 }
+- (UIButton *)rightBtn {
+    if (!_rightBtn) {
+        _rightBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    }
+    return _rightBtn;
+}
+- (UIButton *)leftBtn {
+    if (!_leftBtn) {
+        _leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    }
+    return _leftBtn;
+}
 #pragma mark - public
 + (instancetype)defaultBar {
     return [[self alloc] init];
 }
-- (void)setBarTinColor:(UIColor *)barTinColor {
-    _barTinColor = barTinColor;
-    [self.backgroundView setBackgroundColor:barTinColor];
-}
+
 - (void)setBackgroundImage:(UIImage *)image {
     if (image) {
         if (self.backgroundImageView) {
@@ -148,6 +182,10 @@
         return self.bounds.size;
     }
 }
+
+- (void)setBottomLineHidden:(BOOL)hidden {
+    self.shadowView.hidden = hidden;
+}
 #pragma mark - common
 + (CGFloat)statusBarHeight {
     return [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -158,9 +196,10 @@
 }
 - (UIImage *)defautShadowImage {
     UIImage *image;
-    
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.bounds.size.width, 1) , NO, [UIScreen mainScreen].scale);
-//    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 1)];
+    [line setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    UIGraphicsBeginImageContextWithOptions(line.bounds.size, NO, [UIScreen mainScreen].scale);
+    [line.layer renderInContext:UIGraphicsGetCurrentContext()];
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;

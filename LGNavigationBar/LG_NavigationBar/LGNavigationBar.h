@@ -51,10 +51,32 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGSize)preferredBackgroundImageSize;
 
 
+/**
+ 标题
+ */
 @property (nonatomic,copy) NSString *title;
+
+/**
+ 标题颜色
+ */
 @property (nonatomic) UIColor *titleColor;
+
+/**
+ 标题字体
+ */
 @property (nonatomic) UIFont *titleFont;
 
+/**
+ 左边按键
+ */
+@property (nonatomic,readonly) UIButton *leftBtn;
+
+/**
+ 右边按键
+ */
+@property (nonatomic,readonly) UIButton *rightBtn;
+
+- (void)setBottomLineHidden:(BOOL)hidden;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,14 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qVx-dC-J5O">
+                                <rect key="frame" x="20" y="318.5" width="335" height="31"/>
+                                <connections>
+                                    <action selector="handleAlphe:" destination="BYZ-38-t0r" eventType="valueChanged" id="d0F-CI-o4f"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qVx-dC-J5O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="22B-cm-NJr"/>
+                            <constraint firstItem="qVx-dC-J5O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="8Au-Re-fje"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qVx-dC-J5O" secondAttribute="trailing" constant="22" id="MtF-M9-tuW"/>
+                            <constraint firstItem="qVx-dC-J5O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fOk-bp-643"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="uJQ-hl-gyR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="108.39580209895054"/>
+            <point key="canvasLocation" x="868" y="-590"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l1T-jT-jY9">
