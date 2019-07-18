@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB4D9B1B22E014A8004C61C3 /* LGNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D9B1A22E014A8004C61C3 /* LGNavigationBar.m */; };
 		CBA44EA821AE51A300139963 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA44EA721AE51A300139963 /* AppDelegate.m */; };
 		CBA44EAB21AE51A300139963 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA44EAA21AE51A300139963 /* ViewController.m */; };
 		CBA44EAE21AE51A300139963 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA44EAC21AE51A300139963 /* Main.storyboard */; };
 		CBA44EB021AE51A400139963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA44EAF21AE51A400139963 /* Assets.xcassets */; };
 		CBA44EB321AE51A400139963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA44EB121AE51A400139963 /* LaunchScreen.storyboard */; };
 		CBA44EB621AE51A400139963 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA44EB521AE51A400139963 /* main.m */; };
-		CBA44EBF21AE51EB00139963 /* LGNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA44EBE21AE51EB00139963 /* LGNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB4D9B1922E014A8004C61C3 /* LGNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGNavigationBar.h; sourceTree = "<group>"; };
+		CB4D9B1A22E014A8004C61C3 /* LGNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGNavigationBar.m; sourceTree = "<group>"; };
 		CBA44EA321AE51A300139963 /* LGNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA44EA621AE51A300139963 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBA44EA721AE51A300139963 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,8 +29,6 @@
 		CBA44EB221AE51A400139963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBA44EB421AE51A400139963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBA44EB521AE51A400139963 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CBA44EBD21AE51EB00139963 /* LGNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGNavigationBar.h; sourceTree = "<group>"; };
-		CBA44EBE21AE51EB00139963 /* LGNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,9 +42,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB4D9B1822E014A8004C61C3 /* LG_NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				CB4D9B1922E014A8004C61C3 /* LGNavigationBar.h */,
+				CB4D9B1A22E014A8004C61C3 /* LGNavigationBar.m */,
+			);
+			path = LG_NavigationBar;
+			sourceTree = "<group>";
+		};
 		CBA44E9A21AE51A300139963 = {
 			isa = PBXGroup;
 			children = (
+				CB4D9B1822E014A8004C61C3 /* LG_NavigationBar */,
 				CBA44EA521AE51A300139963 /* LGNavigationBar */,
 				CBA44EA421AE51A300139963 /* Products */,
 			);
@@ -61,7 +71,6 @@
 		CBA44EA521AE51A300139963 /* LGNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				CBA44EBC21AE51D400139963 /* LG_NavigationBar */,
 				CBA44EA621AE51A300139963 /* AppDelegate.h */,
 				CBA44EA721AE51A300139963 /* AppDelegate.m */,
 				CBA44EA921AE51A300139963 /* ViewController.h */,
@@ -73,15 +82,6 @@
 				CBA44EB521AE51A400139963 /* main.m */,
 			);
 			path = LGNavigationBar;
-			sourceTree = "<group>";
-		};
-		CBA44EBC21AE51D400139963 /* LG_NavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				CBA44EBD21AE51EB00139963 /* LGNavigationBar.h */,
-				CBA44EBE21AE51EB00139963 /* LGNavigationBar.m */,
-			);
-			path = LG_NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA44EBF21AE51EB00139963 /* LGNavigationBar.m in Sources */,
+				CB4D9B1B22E014A8004C61C3 /* LGNavigationBar.m in Sources */,
 				CBA44EAB21AE51A300139963 /* ViewController.m in Sources */,
 				CBA44EB621AE51A400139963 /* main.m in Sources */,
 				CBA44EA821AE51A300139963 /* AppDelegate.m in Sources */,

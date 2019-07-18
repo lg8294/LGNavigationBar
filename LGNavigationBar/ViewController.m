@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "LG_NavigationBar/LGNavigationBar.h"
+#import "../LG_NavigationBar/LGNavigationBar.h"
 
 @interface ViewController ()
 
@@ -32,9 +32,6 @@
     
     [self.view addSubview:navBar];
     self.navbar = navBar;
-    
-    
-    
 }
 
 - (IBAction)handleAlphe:(UISlider *)sender {

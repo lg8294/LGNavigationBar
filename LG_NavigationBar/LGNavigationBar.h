@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 自定义 NavigationBar
+ */
 @interface LGNavigationBar : UIView
 
 @property (nonatomic) UIBarPosition barPosition;
@@ -76,7 +79,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,readonly) UIButton *rightBtn;
 
+/**
+ 设置底部分割线是否显示
+
+ @param hidden 是否显示
+ */
 - (void)setBottomLineHidden:(BOOL)hidden;
+
 @end
 
 NS_ASSUME_NONNULL_END
